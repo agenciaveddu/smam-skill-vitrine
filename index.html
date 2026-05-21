@@ -4,281 +4,124 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Skill SMAM — Estratégia de Conteúdo com Claude Code</title>
-<meta name="description" content="A Skill exclusiva da Comunidade SMAM que vira social medias em estrategistas de alto nível usando o Claude Code. Acesso restrito a membros SMAM.">
-<meta property="og:title" content="Skill SMAM — Estratégia de Conteúdo com Claude Code">
-<meta property="og:description" content="Estratégia completa de social media em ~30 minutos. Acesso exclusivo Comunidade SMAM.">
+<meta name="description" content="A Skill exclusiva da Comunidade SMAM que vira social medias em estrategistas de alto nível usando o Claude Code.">
 <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&family=JetBrains+Mono:wght@400;600&display=swap" rel="stylesheet">
 <style>
   :root {
-    --smam-green: #00C896;
-    --smam-green-dark: #00A179;
-    --smam-green-light: #E6FAF4;
-    --smam-black: #0F1419;
-    --smam-gray-900: #1A1F26;
-    --smam-gray-600: #5C6470;
-    --smam-gray-400: #A8AEB8;
-    --smam-gray-100: #F3F5F7;
-    --smam-white: #FFFFFF;
-    --smam-cream: #FAFAF7;
-    --smam-gold: #D4AF37;
+    --smam-green: #00C896; --smam-green-dark: #00A179; --smam-green-light: #E6FAF4;
+    --smam-black: #0F1419; --smam-gray-900: #1A1F26; --smam-gray-600: #5C6470;
+    --smam-gray-400: #A8AEB8; --smam-gray-100: #F3F5F7;
+    --smam-white: #FFFFFF; --smam-cream: #FAFAF7; --smam-gold: #D4AF37;
   }
   * { margin: 0; padding: 0; box-sizing: border-box; }
   html { scroll-behavior: smooth; }
-  body {
-    font-family: 'Plus Jakarta Sans', -apple-system, sans-serif;
-    background: var(--smam-cream);
-    color: var(--smam-black);
-    line-height: 1.6;
-    -webkit-font-smoothing: antialiased;
-  }
+  body { font-family: 'Plus Jakarta Sans', -apple-system, sans-serif; background: var(--smam-cream); color: var(--smam-black); line-height: 1.6; -webkit-font-smoothing: antialiased; }
   .container { max-width: 960px; margin: 0 auto; padding: 0 24px; }
 
   /* HERO */
-  .hero {
-    background: linear-gradient(135deg, var(--smam-black) 0%, var(--smam-gray-900) 100%);
-    color: var(--smam-white);
-    padding: 80px 0 100px;
-    position: relative;
-    overflow: hidden;
-  }
-  .hero::before {
-    content: '';
-    position: absolute;
-    top: -100px; right: -100px;
-    width: 400px; height: 400px;
-    background: radial-gradient(circle, var(--smam-green) 0%, transparent 70%);
-    opacity: 0.25;
-    border-radius: 50%;
-  }
-  .hero-badge {
-    display: inline-block;
-    background: var(--smam-green);
-    color: var(--smam-black);
-    padding: 6px 14px;
-    border-radius: 100px;
-    font-size: 12px;
-    font-weight: 700;
-    text-transform: uppercase;
-    letter-spacing: 1.2px;
-    margin-bottom: 24px;
-  }
-  .hero h1 {
-    font-size: 56px;
-    line-height: 1.1;
-    font-weight: 800;
-    letter-spacing: -1.5px;
-    margin-bottom: 20px;
-  }
+  .hero { background: linear-gradient(135deg, var(--smam-black) 0%, var(--smam-gray-900) 100%); color: var(--smam-white); padding: 72px 0 88px; position: relative; overflow: hidden; }
+  .hero::before { content: ''; position: absolute; top: -100px; right: -100px; width: 400px; height: 400px; background: radial-gradient(circle, var(--smam-green) 0%, transparent 70%); opacity: 0.25; border-radius: 50%; }
+  .hero-badge { display: inline-block; background: var(--smam-green); color: var(--smam-black); padding: 6px 14px; border-radius: 100px; font-size: 12px; font-weight: 700; text-transform: uppercase; letter-spacing: 1.2px; margin-bottom: 24px; }
+  .hero h1 { font-size: 52px; line-height: 1.1; font-weight: 800; letter-spacing: -1.5px; margin-bottom: 20px; }
   .hero h1 span { color: var(--smam-green); }
-  .hero-subtitle {
-    font-size: 20px;
-    color: var(--smam-gray-400);
-    max-width: 700px;
-    margin-bottom: 36px;
-  }
+  .hero-subtitle { font-size: 19px; color: var(--smam-gray-400); max-width: 700px; margin-bottom: 32px; }
+  .hero-cta { display: inline-block; background: var(--smam-green); color: var(--smam-black); padding: 16px 28px; border-radius: 100px; text-decoration: none; font-weight: 700; font-size: 16px; transition: transform 0.2s; }
+  .hero-cta:hover { transform: scale(1.05); }
 
   /* SECTION */
-  section { padding: 72px 0; }
-  .section-title {
-    font-size: 14px;
-    text-transform: uppercase;
-    letter-spacing: 2px;
-    color: var(--smam-green-dark);
-    font-weight: 700;
-    margin-bottom: 12px;
-  }
-  .section-heading {
-    font-size: 38px;
-    font-weight: 800;
-    line-height: 1.15;
-    letter-spacing: -1px;
-    margin-bottom: 16px;
-  }
-  .section-lead {
-    font-size: 18px;
-    color: var(--smam-gray-600);
-    margin-bottom: 40px;
-    max-width: 720px;
-  }
+  section { padding: 64px 0; }
+  .section-title { font-size: 14px; text-transform: uppercase; letter-spacing: 2px; color: var(--smam-green-dark); font-weight: 700; margin-bottom: 12px; }
+  .section-heading { font-size: 36px; font-weight: 800; line-height: 1.15; letter-spacing: -1px; margin-bottom: 16px; }
+  .section-lead { font-size: 18px; color: var(--smam-gray-600); margin-bottom: 40px; max-width: 720px; }
 
-  /* GATEWAY: 2 caminhos */
-  .gateway {
-    display: grid;
-    grid-template-columns: 1fr 1fr;
-    gap: 24px;
-    margin: 40px 0;
-  }
-  .path-card {
-    background: var(--smam-white);
-    border-radius: 24px;
-    padding: 40px;
-    border: 2px solid transparent;
-    transition: all 0.25s ease;
-    position: relative;
-  }
-  .path-card.recommended {
-    border-color: var(--smam-green);
-    box-shadow: 0 12px 32px rgba(0,200,150,0.12);
-  }
-  .path-card.recommended::before {
-    content: 'Recomendado · Membros SMAM';
-    position: absolute;
-    top: -14px;
-    left: 24px;
-    background: var(--smam-green);
-    color: var(--smam-black);
-    padding: 4px 14px;
-    border-radius: 100px;
-    font-size: 11px;
-    font-weight: 700;
-    letter-spacing: 1px;
-    text-transform: uppercase;
-  }
-  .path-card.avulso::before {
-    content: 'Aquisição avulsa';
-    position: absolute;
-    top: -14px;
-    left: 24px;
-    background: var(--smam-gold);
-    color: var(--smam-black);
-    padding: 4px 14px;
-    border-radius: 100px;
-    font-size: 11px;
-    font-weight: 700;
-    letter-spacing: 1px;
-    text-transform: uppercase;
-  }
+  /* GATEWAY */
+  .gateway { display: grid; grid-template-columns: 1fr 1fr; gap: 24px; margin: 32px 0; }
+  .path-card { background: var(--smam-white); border-radius: 24px; padding: 36px; border: 2px solid transparent; transition: all 0.25s ease; position: relative; }
+  .path-card.recommended { border-color: var(--smam-green); box-shadow: 0 12px 32px rgba(0,200,150,0.12); }
+  .path-card.recommended::before { content: 'Recomendado · Membros SMAM'; position: absolute; top: -14px; left: 24px; background: var(--smam-green); color: var(--smam-black); padding: 4px 14px; border-radius: 100px; font-size: 11px; font-weight: 700; letter-spacing: 1px; text-transform: uppercase; }
+  .path-card.avulso::before { content: 'Aquisição avulsa'; position: absolute; top: -14px; left: 24px; background: var(--smam-gold); color: var(--smam-black); padding: 4px 14px; border-radius: 100px; font-size: 11px; font-weight: 700; letter-spacing: 1px; text-transform: uppercase; }
   .path-card.avulso { border-color: var(--smam-gold); }
-  .path-icon { font-size: 40px; margin-bottom: 16px; }
-  .path-title { font-size: 24px; font-weight: 800; margin-bottom: 8px; }
-  .path-price {
-    font-size: 36px;
-    font-weight: 800;
-    color: var(--smam-green-dark);
-    margin-bottom: 4px;
-    line-height: 1;
-  }
+  .path-icon { font-size: 36px; margin-bottom: 12px; }
+  .path-title { font-size: 22px; font-weight: 800; margin-bottom: 8px; }
+  .path-price { font-size: 32px; font-weight: 800; color: var(--smam-green-dark); margin-bottom: 4px; line-height: 1; }
   .path-card.avulso .path-price { color: var(--smam-gold); }
-  .path-price-detail { font-size: 14px; color: var(--smam-gray-600); margin-bottom: 24px; }
-  .path-features { list-style: none; margin-bottom: 28px; }
-  .path-features li {
-    padding: 8px 0;
-    color: var(--smam-gray-900);
-    font-size: 15px;
-    display: flex;
-    gap: 10px;
-    align-items: flex-start;
-  }
-  .path-features li::before {
-    content: '✓';
-    color: var(--smam-green);
-    font-weight: 800;
-    flex-shrink: 0;
-  }
+  .path-price-detail { font-size: 13px; color: var(--smam-gray-600); margin-bottom: 20px; }
+  .path-features { list-style: none; margin-bottom: 24px; }
+  .path-features li { padding: 6px 0; color: var(--smam-gray-900); font-size: 14px; display: flex; gap: 10px; align-items: flex-start; }
+  .path-features li::before { content: '✓'; color: var(--smam-green); font-weight: 800; flex-shrink: 0; }
   .path-card.avulso .path-features li::before { color: var(--smam-gold); }
-  .path-btn {
-    display: block;
-    background: var(--smam-green);
-    color: var(--smam-black);
-    text-align: center;
-    padding: 16px 24px;
-    border-radius: 12px;
-    text-decoration: none;
-    font-weight: 700;
-    font-size: 16px;
-    transition: transform 0.15s, box-shadow 0.15s;
-  }
-  .path-btn:hover {
-    transform: translateY(-2px);
-    box-shadow: 0 8px 20px rgba(0,200,150,0.3);
-  }
-  .path-card.avulso .path-btn {
-    background: var(--smam-gold);
-  }
-  .path-card.avulso .path-btn:hover {
-    box-shadow: 0 8px 20px rgba(212,175,55,0.3);
-  }
-  .path-btn-secondary {
-    display: block;
-    text-align: center;
-    padding: 12px;
-    margin-top: 10px;
-    color: var(--smam-gray-600);
-    text-decoration: none;
-    font-size: 14px;
-  }
-  .path-btn-secondary:hover { color: var(--smam-green-dark); }
+  .path-btn { display: block; background: var(--smam-green); color: var(--smam-black); text-align: center; padding: 14px 20px; border-radius: 12px; text-decoration: none; font-weight: 700; font-size: 15px; transition: all 0.15s; }
+  .path-btn:hover { transform: translateY(-2px); box-shadow: 0 8px 20px rgba(0,200,150,0.3); }
+  .path-card.avulso .path-btn { background: var(--smam-gold); }
 
-  /* GRID DE ENTREGÁVEIS */
-  .deliv-grid {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
-    gap: 16px;
-    margin-top: 24px;
-  }
-  .deliv-card {
-    background: var(--smam-white);
-    padding: 24px;
-    border-radius: 16px;
-    border-left: 4px solid var(--smam-green);
-  }
-  .deliv-icon { font-size: 28px; margin-bottom: 8px; }
-  .deliv-title { font-weight: 700; margin-bottom: 4px; font-size: 15px; }
-  .deliv-desc { font-size: 13px; color: var(--smam-gray-600); }
+  /* PROCESSO PASSO A PASSO */
+  .processo-steps { background: var(--smam-white); border-radius: 24px; padding: 0; margin-top: 24px; overflow: hidden; box-shadow: 0 4px 12px rgba(0,0,0,0.04); }
+  .step-row { display: flex; gap: 20px; padding: 24px 32px; border-bottom: 1px solid var(--smam-gray-100); align-items: flex-start; }
+  .step-row:last-child { border-bottom: none; }
+  .step-num { background: var(--smam-green); color: var(--smam-black); width: 44px; height: 44px; border-radius: 12px; display: flex; align-items: center; justify-content: center; font-weight: 800; font-size: 18px; flex-shrink: 0; }
+  .step-content { flex: 1; }
+  .step-title { font-weight: 800; font-size: 17px; margin-bottom: 4px; }
+  .step-desc { color: var(--smam-gray-600); font-size: 14px; }
+  .step-desc a { color: var(--smam-green-dark); font-weight: 600; }
 
-  /* AVISO LICENÇA */
-  .license-banner {
-    background: rgba(212,175,55,0.08);
-    border-left: 5px solid var(--smam-gold);
-    padding: 24px 28px;
-    border-radius: 12px;
-    margin: 40px 0;
-  }
+  /* GITHUB GUIDE */
+  .github-guide { background: linear-gradient(135deg, #FFF9E6 0%, var(--smam-white) 100%); border: 2px solid var(--smam-gold); border-radius: 20px; padding: 28px; margin-top: 32px; }
+  .github-guide-header { display: flex; gap: 16px; align-items: center; margin-bottom: 20px; }
+  .github-guide-icon { font-size: 36px; }
+  .github-guide-title { font-size: 22px; font-weight: 800; margin-bottom: 2px; }
+  .github-guide-subtitle { font-size: 14px; color: var(--smam-gray-600); }
+  .github-mini-steps { display: grid; gap: 10px; margin-top: 12px; }
+  .github-mini-step { display: flex; gap: 12px; align-items: flex-start; font-size: 14px; }
+  .github-mini-step .num { background: var(--smam-gold); color: var(--smam-black); width: 24px; height: 24px; border-radius: 6px; display: flex; align-items: center; justify-content: center; font-weight: 800; font-size: 12px; flex-shrink: 0; }
+  .github-mini-step code { background: var(--smam-gray-100); padding: 2px 8px; border-radius: 4px; font-size: 13px; }
+
+  /* FORMULARIO */
+  .form-box { background: var(--smam-black); color: var(--smam-white); padding: 36px; border-radius: 24px; margin-top: 24px; position: relative; overflow: hidden; }
+  .form-box::before { content: ''; position: absolute; top: -80px; right: -80px; width: 250px; height: 250px; background: radial-gradient(circle, var(--smam-green) 0%, transparent 70%); opacity: 0.2; border-radius: 50%; }
+  .form-box h3 { font-size: 24px; font-weight: 800; margin-bottom: 12px; position: relative; }
+  .form-box p { color: var(--smam-gray-400); margin-bottom: 24px; font-size: 15px; position: relative; }
+  .form-template { background: rgba(0,0,0,0.4); padding: 20px; border-radius: 12px; border: 1px solid rgba(0,200,150,0.3); position: relative; margin-bottom: 20px; }
+  .form-template pre { white-space: pre-wrap; font-family: 'JetBrains Mono', monospace; font-size: 13px; color: var(--smam-cream); line-height: 1.7; }
+  .copy-btn { position: absolute; top: 12px; right: 12px; background: var(--smam-green); color: var(--smam-black); border: none; padding: 8px 14px; border-radius: 8px; font-size: 12px; font-weight: 700; cursor: pointer; font-family: inherit; }
+  .copy-btn.copied { background: var(--smam-gold); }
+  .send-options { display: grid; grid-template-columns: 1fr 1fr; gap: 12px; position: relative; }
+  .send-btn { display: flex; align-items: center; gap: 10px; padding: 14px 20px; background: var(--smam-white); color: var(--smam-black); text-decoration: none; border-radius: 12px; font-weight: 700; font-size: 14px; transition: transform 0.2s; }
+  .send-btn:hover { transform: translateY(-2px); }
+  .send-btn.whatsapp { background: var(--smam-green); }
+
+  /* DELIV */
+  .deliv-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(220px, 1fr)); gap: 16px; margin-top: 24px; }
+  .deliv-card { background: var(--smam-white); padding: 22px; border-radius: 16px; border-left: 4px solid var(--smam-green); }
+  .deliv-icon { font-size: 26px; margin-bottom: 8px; }
+  .deliv-title { font-weight: 700; margin-bottom: 4px; font-size: 14px; }
+  .deliv-desc { font-size: 12px; color: var(--smam-gray-600); }
+
+  /* LICENÇA */
+  .license-banner { background: rgba(212,175,55,0.08); border-left: 5px solid var(--smam-gold); padding: 20px 24px; border-radius: 12px; margin: 32px 0; font-size: 14px; }
   .license-banner strong { color: var(--smam-gold); }
+  .license-banner a { color: var(--smam-gold); }
 
   /* FAQ */
-  .faq-item {
-    background: var(--smam-white);
-    border-radius: 12px;
-    padding: 22px 28px;
-    margin-bottom: 12px;
-    border: 1px solid var(--smam-gray-100);
-  }
-  .faq-q {
-    font-weight: 700;
-    margin-bottom: 6px;
-    color: var(--smam-gray-900);
-    display: flex; gap: 8px;
-  }
+  .faq-item { background: var(--smam-white); border-radius: 12px; padding: 20px 24px; margin-bottom: 10px; border: 1px solid var(--smam-gray-100); }
+  .faq-q { font-weight: 700; margin-bottom: 6px; color: var(--smam-gray-900); display: flex; gap: 8px; font-size: 15px; }
   .faq-q::before { content: 'P:'; color: var(--smam-green-dark); font-weight: 800; }
-  .faq-a { color: var(--smam-gray-600); font-size: 15px; padding-left: 24px; }
+  .faq-a { color: var(--smam-gray-600); font-size: 14px; padding-left: 24px; }
 
   /* FOOTER */
-  footer {
-    background: var(--smam-black);
-    color: var(--smam-gray-400);
-    padding: 48px 0 32px;
-    text-align: center;
-    font-size: 14px;
-  }
+  footer { background: var(--smam-black); color: var(--smam-gray-400); padding: 40px 0 24px; text-align: center; font-size: 13px; }
   footer strong { color: var(--smam-green); }
   footer a { color: var(--smam-green); text-decoration: none; }
-  .footer-legal {
-    margin-top: 24px;
-    padding-top: 24px;
-    border-top: 1px solid rgba(255,255,255,0.1);
-    font-size: 12px;
-    opacity: 0.6;
-  }
+  .footer-legal { margin-top: 20px; padding-top: 20px; border-top: 1px solid rgba(255,255,255,0.1); font-size: 11px; opacity: 0.6; }
 
-  /* MOBILE */
   @media (max-width: 768px) {
-    .hero h1 { font-size: 38px; }
+    .hero h1 { font-size: 36px; }
     .hero-subtitle { font-size: 16px; }
-    .section-heading { font-size: 28px; }
+    .section-heading { font-size: 26px; }
     .gateway { grid-template-columns: 1fr; gap: 32px; }
-    .path-card { padding: 28px; }
-    .path-card.recommended::before, .path-card.avulso::before { left: 16px; }
+    .path-card { padding: 24px; }
+    .step-row { padding: 18px 20px; }
+    .send-options { grid-template-columns: 1fr; }
+    .form-box { padding: 24px; }
   }
 </style>
 </head>
@@ -289,36 +132,52 @@
   <div class="container">
     <div class="hero-badge">Comunidade SMAM · Skill Exclusiva</div>
     <h1>Estratégia de conteúdo<br>completa em <span>30 minutos.</span></h1>
-    <p class="hero-subtitle">A Skill exclusiva da <strong>Comunidade SMAM da Jamile Fernandes</strong> que transforma social medias em estrategistas de alto nível usando o Claude Code. <br><strong style="color: var(--smam-green);">Acesso restrito · Propriedade intelectual protegida.</strong></p>
+    <p class="hero-subtitle">A Skill exclusiva da <strong>Comunidade SMAM da Jamile Fernandes</strong> que transforma social medias em estrategistas de alto nível usando o Claude Code.</p>
+    <a href="#como-conseguir" class="hero-cta">Quero ter acesso →</a>
   </div>
 </section>
 
-<!-- GATEWAY: 2 caminhos -->
+<!-- O QUE VOCÊ RECEBE -->
 <section>
   <div class="container">
+    <div class="section-title">O que você entrega ao cliente</div>
+    <h2 class="section-heading">7 documentos profissionais. Em uma hora.</h2>
+    <p class="section-lead">Cada cliente seu sai dessa skill com uma estratégia completa em arquivos prontos pra mandar via Notion, Google Docs, PDF ou apresentação visual gerada por outras AIs.</p>
+
+    <div class="deliv-grid">
+      <div class="deliv-card"><div class="deliv-icon">📋</div><div class="deliv-title">Briefing</div><div class="deliv-desc">Análise automática Instagram + site</div></div>
+      <div class="deliv-card"><div class="deliv-icon">🔍</div><div class="deliv-title">Diagnóstico</div><div class="deliv-desc">3 concorrentes + oportunidades</div></div>
+      <div class="deliv-card"><div class="deliv-icon">🎯</div><div class="deliv-title">Estratégia</div><div class="deliv-desc">Persona + 4 pilares + tom</div></div>
+      <div class="deliv-card"><div class="deliv-icon">📅</div><div class="deliv-title">Calendário 30 dias</div><div class="deliv-desc">Dia a dia com tema e CTA</div></div>
+      <div class="deliv-card"><div class="deliv-icon">📝</div><div class="deliv-title">Roteiros Semana 1</div><div class="deliv-desc">Reels, Carrosséis e Stories</div></div>
+      <div class="deliv-card"><div class="deliv-icon">📊</div><div class="deliv-title">Hashtags + KPIs</div><div class="deliv-desc">Como medir e ajustar</div></div>
+      <div class="deliv-card" style="border-left-color: var(--smam-gold); background: linear-gradient(135deg, var(--smam-white) 0%, #FFF9E6 100%);"><div class="deliv-icon">✨</div><div class="deliv-title">Apresentação Visual <span style="background: var(--smam-gold); color: var(--smam-black); padding: 2px 6px; border-radius: 4px; font-size: 10px; font-weight: 700;">NOVO</span></div><div class="deliv-desc">Claude Design, Gamma, Canva</div></div>
+    </div>
+  </div>
+</section>
+
+<!-- COMO CONSEGUIR ACESSO (Gateway) -->
+<section id="como-conseguir" style="background: var(--smam-white);">
+  <div class="container">
     <div class="section-title">Como obter acesso</div>
-    <h2 class="section-heading">Você tem 2 caminhos pra liberar sua Skill.</h2>
-    <p class="section-lead">A Skill é distribuída de forma controlada via repositório privado do GitHub. Escolha o caminho que faz sentido pra você.</p>
+    <h2 class="section-heading">Você tem 2 caminhos.</h2>
+    <p class="section-lead">A Skill é distribuída de forma controlada via repositório privado do GitHub. Escolha o caminho que faz sentido pra você:</p>
 
     <div class="gateway">
-
-      <!-- CAMINHO 1: MEMBROS SMAM -->
       <div class="path-card recommended">
         <div class="path-icon">💚</div>
         <div class="path-title">Já sou membro SMAM</div>
         <div class="path-price">Incluído</div>
-        <div class="path-price-detail">na sua assinatura da Comunidade SMAM</div>
+        <div class="path-price-detail">na sua assinatura SMAM</div>
         <ul class="path-features">
-          <li>Acesso à Skill enquanto a assinatura estiver ativa</li>
-          <li>Updates de novas fases lançadas</li>
-          <li>Suporte direto no grupo da comunidade</li>
-          <li>Pode usar pra todos seus clientes (uso comercial)</li>
+          <li>Acesso à Skill enquanto for membro</li>
+          <li>Updates de novas fases</li>
+          <li>Suporte no grupo da comunidade</li>
+          <li>Uso comercial liberado</li>
         </ul>
-        <a href="mailto:agenciaveddu@gmail.com?subject=Skill%20SMAM%20%E2%80%94%20Acesso%20membro&body=Ol%C3%A1!%20Sou%20membro%20da%20Comunidade%20SMAM%20e%20quero%20liberar%20meu%20acesso%20%C3%A0%20Skill%20de%20Estrat%C3%A9gia%20de%20Conte%C3%BAdo.%0A%0AMeu%20email%20da%20assinatura%20SMAM%3A%20%5BSEU%20EMAIL%5D%0AMeu%20username%20do%20GitHub%3A%20%5BSEU%20USERNAME%5D%0A%0AObrigada!" class="path-btn">📧 Solicitar acesso (sou membro)</a>
-        <a href="#como-funciona" class="path-btn-secondary">Como funciona o processo →</a>
+        <a href="#processo-cadastro" class="path-btn">📋 Quero meu cadastro</a>
       </div>
 
-      <!-- CAMINHO 2: AQUISIÇÃO AVULSA -->
       <div class="path-card avulso">
         <div class="path-icon">💎</div>
         <div class="path-title">Quero comprar avulso</div>
@@ -326,97 +185,191 @@
         <div class="path-price-detail">licença individual perpétua · pagamento único</div>
         <ul class="path-features">
           <li>Licença vitalícia · sem mensalidade</li>
-          <li>Recebe todas as atualizações de versões</li>
-          <li>Pode usar pra seus clientes (uso comercial)</li>
-          <li><strong style="color: var(--smam-gold);">🎁 BÔNUS: 3 meses grátis da Comunidade SMAM</strong></li>
+          <li>Todas as atualizações de versões</li>
+          <li>Uso comercial pra seus clientes</li>
+          <li><strong style="color: var(--smam-gold);">🎁 3 meses grátis da Comunidade SMAM</strong></li>
         </ul>
-        <a href="#" onclick="alert('🔜 Link de pagamento Mercado Pago será disponibilizado em breve. Por enquanto, mande email para agenciaveddu@gmail.com com assunto: Skill SMAM — Compra avulsa'); return false;" class="path-btn">💳 Comprar via Mercado Pago</a>
-        <a href="https://jamilefernandes.com.br" class="path-btn-secondary">Ou entrar pra Comunidade SMAM →</a>
+        <a href="#processo-cadastro" class="path-btn">💳 Comprar acesso</a>
       </div>
-
-    </div>
-
-    <!-- Aviso de licença -->
-    <div class="license-banner">
-      <strong>⚠️ Acesso restrito por licença:</strong> Esta Skill é protegida por <a href="https://github.com/agenciaveddu/estrategia-conteudo/blob/main/LICENSE.md" style="color: var(--smam-gold);">Licença Proprietária Restrita</a>. Cada cópia tem identificador único da licenciada. Redistribuição, revenda ou compartilhamento não autorizados configuram violação contratual com <strong>multa de R$ 2.700 (3× o valor)</strong> e ação judicial.
     </div>
   </div>
 </section>
 
-<!-- O QUE VOCÊ RECEBE -->
+<!-- PROCESSO DE CADASTRO (passo a passo) -->
+<section id="processo-cadastro">
+  <div class="container">
+    <div class="section-title">Processo de cadastro · 100% guiado</div>
+    <h2 class="section-heading">Como funciona, passo a passo.</h2>
+    <p class="section-lead">Mesmo se você NUNCA usou GitHub, dá pra fazer. Leva uns 10 minutinhos no total. Olha só:</p>
+
+    <div class="processo-steps">
+      <div class="step-row">
+        <div class="step-num">1</div>
+        <div class="step-content">
+          <div class="step-title">Você cria uma conta gratuita no GitHub</div>
+          <div class="step-desc">3 minutos. É tipo criar conta no Instagram, mas pra "área protegida". <strong>Tem passo a passo super detalhado logo abaixo</strong> ↓</div>
+        </div>
+      </div>
+      <div class="step-row">
+        <div class="step-num">2</div>
+        <div class="step-content">
+          <div class="step-title">Você manda seu cadastro pra gente</div>
+          <div class="step-desc">Por email ou WhatsApp do grupo SMAM. Tem template pronto pra copiar mais abaixo ↓</div>
+        </div>
+      </div>
+      <div class="step-row">
+        <div class="step-num">3</div>
+        <div class="step-content">
+          <div class="step-title">Time SMAM confirma e libera</div>
+          <div class="step-desc">Conferimos se você é membro ativo / se a compra avulsa foi confirmada · <strong>até 24h úteis</strong></div>
+        </div>
+      </div>
+      <div class="step-row">
+        <div class="step-num">4</div>
+        <div class="step-content">
+          <div class="step-title">Você recebe convite por email</div>
+          <div class="step-desc">Email do GitHub com botão "Accept invitation". Clica e pronto, está dentro!</div>
+        </div>
+      </div>
+      <div class="step-row">
+        <div class="step-num">5</div>
+        <div class="step-content">
+          <div class="step-title">Instala a Skill (30 segundos)</div>
+          <div class="step-desc">Cola um prompt no Claude Code e ele faz tudo automaticamente</div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- GUIA GITHUB EM DETALHES -->
 <section style="background: var(--smam-white);">
   <div class="container">
-    <div class="section-title">O que você entrega ao cliente</div>
-    <h2 class="section-heading">7 documentos profissionais. Em uma hora.</h2>
-    <p class="section-lead">Cada cliente seu sai dessa skill com uma estratégia completa em arquivos prontos pra mandar via Notion, Google Docs, PDF ou apresentação visual gerada por outras AIs.</p>
+    <div class="section-title">Passo 1 em detalhes</div>
+    <h2 class="section-heading">Criar conta no GitHub (3 min)</h2>
+    <p class="section-lead">É grátis, é seguro, e não precisa entender de programação. Acompanha:</p>
 
-    <div class="deliv-grid">
-      <div class="deliv-card"><div class="deliv-icon">📋</div><div class="deliv-title">Briefing</div><div class="deliv-desc">Análise automática Instagram + site do cliente</div></div>
-      <div class="deliv-card"><div class="deliv-icon">🔍</div><div class="deliv-title">Diagnóstico</div><div class="deliv-desc">Análise de 3 concorrentes + gaps de oportunidade</div></div>
-      <div class="deliv-card"><div class="deliv-icon">🎯</div><div class="deliv-title">Estratégia</div><div class="deliv-desc">Persona + 4 pilares + tom de voz</div></div>
-      <div class="deliv-card"><div class="deliv-icon">📅</div><div class="deliv-title">Calendário 30 dias</div><div class="deliv-desc">Dia a dia com tema, gancho e CTA</div></div>
-      <div class="deliv-card"><div class="deliv-icon">📝</div><div class="deliv-title">Roteiros Semana 1</div><div class="deliv-desc">Reels, Carrosséis e Stories prontos</div></div>
-      <div class="deliv-card"><div class="deliv-icon">📊</div><div class="deliv-title">Hashtags + KPIs</div><div class="deliv-desc">Como medir e ajustar mês a mês</div></div>
-      <div class="deliv-card" style="border-left-color: var(--smam-gold); background: linear-gradient(135deg, var(--smam-white) 0%, #FFF9E6 100%);"><div class="deliv-icon">✨</div><div class="deliv-title">Apresentação Visual <span style="background: var(--smam-gold); color: var(--smam-black); padding: 2px 6px; border-radius: 4px; font-size: 10px; font-weight: 700;">NOVO</span></div><div class="deliv-desc">Exporta pra Claude Design, Gamma, Canva, Tome</div></div>
+    <div class="github-guide">
+      <div class="github-guide-header">
+        <div class="github-guide-icon">📝</div>
+        <div>
+          <div class="github-guide-title">Mini-tutorial GitHub</div>
+          <div class="github-guide-subtitle">Pra quem nunca usou. Versão pra leigos, sem termos técnicos.</div>
+        </div>
+      </div>
+
+      <div class="github-mini-steps">
+        <div class="github-mini-step">
+          <div class="num">1</div>
+          <div><strong>Abra o site:</strong> entre em <code>github.com/signup</code> no navegador (Chrome, Safari, Edge)</div>
+        </div>
+        <div class="github-mini-step">
+          <div class="num">2</div>
+          <div><strong>Email:</strong> coloque seu email (de preferência o mesmo da Comunidade SMAM) → clica "Continue"</div>
+        </div>
+        <div class="github-mini-step">
+          <div class="num">3</div>
+          <div><strong>Senha:</strong> crie uma senha forte (mín. 8 caracteres com 1 número) → "Continue"</div>
+        </div>
+        <div class="github-mini-step">
+          <div class="num">4</div>
+          <div><strong>Username:</strong> escolha um nome único (ex: <code>mariadasilva2026</code>). 🔑 <strong style="color: var(--smam-gold);">ANOTE ESSE NOME — você vai mandar pra gente</strong></div>
+        </div>
+        <div class="github-mini-step">
+          <div class="num">5</div>
+          <div><strong>Puzzle:</strong> resolve o teste visual (clique nos alvos pra confirmar que não é robô)</div>
+        </div>
+        <div class="github-mini-step">
+          <div class="num">6</div>
+          <div><strong>Código por email:</strong> abre seu email, copia o código de 8 dígitos, cola na tela do GitHub</div>
+        </div>
+        <div class="github-mini-step">
+          <div class="num">7</div>
+          <div><strong>Pular personalizações:</strong> pode pular as próximas telas (perguntas de empresa/uso). Não muda nada.</div>
+        </div>
+        <div class="github-mini-step">
+          <div class="num">8</div>
+          <div><strong>Pronto!</strong> sua conta GitHub está criada. Volte aqui pra continuar o cadastro ↓</div>
+        </div>
+      </div>
+
+      <div style="margin-top: 24px; padding-top: 20px; border-top: 1px solid rgba(212,175,55,0.3); font-size: 13px; color: var(--smam-gray-600);">
+        🆘 <strong>Travou em algum passo?</strong> Manda print pra gente pelo email ou grupo SMAM.<br>
+        📖 <strong>Tutorial completo com mais detalhes:</strong> <a href="./CRIAR-CONTA-GITHUB.md" style="color: var(--smam-gold); font-weight: 700;">CRIAR-CONTA-GITHUB.md</a>
+      </div>
     </div>
   </div>
 </section>
 
-<!-- COMO FUNCIONA -->
-<section id="como-funciona">
+<!-- ENVIAR CADASTRO -->
+<section>
   <div class="container">
-    <div class="section-title">Após liberar acesso</div>
-    <h2 class="section-heading">Como o processo funciona.</h2>
-    <p class="section-lead">Depois que você solicita acesso, o fluxo é simples e rápido:</p>
+    <div class="section-title">Passo 2 em detalhes</div>
+    <h2 class="section-heading">Enviar seu cadastro pra gente</h2>
+    <p class="section-lead">Depois de criar sua conta GitHub, copie o template abaixo, preencha com seus dados e mande pelo email ou WhatsApp:</p>
 
-    <div style="background: var(--smam-white); border-radius: 16px; padding: 32px; margin-top: 16px;">
-      <div style="display: flex; gap: 20px; padding: 16px 0; border-bottom: 1px solid var(--smam-gray-100);">
-        <div style="background: var(--smam-green); color: var(--smam-black); width: 36px; height: 36px; border-radius: 10px; display: flex; align-items: center; justify-content: center; font-weight: 800; flex-shrink: 0;">1</div>
-        <div>
-          <div style="font-weight: 700; margin-bottom: 4px;">Você manda seu username GitHub</div>
-          <div style="color: var(--smam-gray-600); font-size: 14px;">Por email ou pelo grupo da comunidade (cria conta gratuita em <a href="https://github.com/signup" style="color: var(--smam-green-dark);">github.com/signup</a> se ainda não tiver)</div>
-        </div>
+    <div class="form-box">
+      <h3>📨 Template do cadastro</h3>
+      <p>Copia esse texto, troca os <code style="background: rgba(255,255,255,0.1); padding: 2px 6px; border-radius: 4px; color: var(--smam-green);">[campos]</code> pelos seus dados, e manda pra gente:</p>
+
+      <div class="form-template">
+        <button class="copy-btn" onclick="copyTemplate(this)">📋 Copiar</button>
+        <pre id="template-text">Olá! Quero acesso à Skill SMAM Estratégia de Conteúdo.
+
+📛 Nome completo: [seu nome completo]
+📧 Email da SMAM: [email da sua assinatura SMAM]
+🐙 Username GitHub: [@seuusername]
+
+Sou:
+[ ] Membro ativo da Comunidade SMAM
+[ ] Comprei licença avulsa (R$900 via Mercado Pago)
+
+Li e aceito os termos da licença (LICENSE.md) — entendo que a skill é
+de uso exclusivo, não posso redistribuir, e cada cópia tem marca d'água
+da minha conta.
+
+Obrigada!</pre>
       </div>
-      <div style="display: flex; gap: 20px; padding: 16px 0; border-bottom: 1px solid var(--smam-gray-100);">
-        <div style="background: var(--smam-green); color: var(--smam-black); width: 36px; height: 36px; border-radius: 10px; display: flex; align-items: center; justify-content: center; font-weight: 800; flex-shrink: 0;">2</div>
-        <div>
-          <div style="font-weight: 700; margin-bottom: 4px;">Time SMAM confirma seu acesso</div>
-          <div style="color: var(--smam-gray-600); font-size: 14px;">Validamos se você é membro ativo ou se o pagamento avulso foi confirmado · até 24h úteis</div>
-        </div>
+
+      <div class="send-options">
+        <a href="mailto:agenciaveddu@gmail.com?subject=Skill%20SMAM%20%E2%80%94%20Quero%20acesso&body=Ol%C3%A1!%20Quero%20acesso%20%C3%A0%20Skill%20SMAM%20Estrat%C3%A9gia%20de%20Conte%C3%BAdo.%0A%0A%F0%9F%93%9B%20Nome%20completo%3A%20%5Bseu%20nome%20completo%5D%0A%F0%9F%93%A7%20Email%20da%20SMAM%3A%20%5Bemail%20da%20sua%20assinatura%20SMAM%5D%0A%F0%9F%90%99%20Username%20GitHub%3A%20%5B%40seuusername%5D%0A%0ASou%3A%0A%5B%20%5D%20Membro%20ativo%20da%20Comunidade%20SMAM%0A%5B%20%5D%20Comprei%20licen%C3%A7a%20avulsa%20(R%24900%20via%20Mercado%20Pago)%0A%0ALi%20e%20aceito%20os%20termos%20da%20licen%C3%A7a.%0A%0AObrigada!" class="send-btn">📧 Enviar por email</a>
+        <a href="https://wa.me/?text=Ol%C3%A1!%20Quero%20acesso%20%C3%A0%20Skill%20SMAM.%0A%0ANome%3A%20%5Bseu%20nome%5D%0AEmail%20SMAM%3A%20%5Bseu%20email%5D%0AUsername%20GitHub%3A%20%5B%40seuusername%5D" class="send-btn whatsapp">📱 Enviar no WhatsApp SMAM</a>
       </div>
-      <div style="display: flex; gap: 20px; padding: 16px 0; border-bottom: 1px solid var(--smam-gray-100);">
-        <div style="background: var(--smam-green); color: var(--smam-black); width: 36px; height: 36px; border-radius: 10px; display: flex; align-items: center; justify-content: center; font-weight: 800; flex-shrink: 0;">3</div>
-        <div>
-          <div style="font-weight: 700; margin-bottom: 4px;">Você recebe convite por email</div>
-          <div style="color: var(--smam-gray-600); font-size: 14px;">Convite do GitHub pra ser collaborator do repositório privado. Aceite e ative.</div>
-        </div>
-      </div>
-      <div style="display: flex; gap: 20px; padding: 16px 0;">
-        <div style="background: var(--smam-green); color: var(--smam-black); width: 36px; height: 36px; border-radius: 10px; display: flex; align-items: center; justify-content: center; font-weight: 800; flex-shrink: 0;">4</div>
-        <div>
-          <div style="font-weight: 700; margin-bottom: 4px;">Instala via prompt no Claude Code</div>
-          <div style="color: var(--smam-gray-600); font-size: 14px;">Em 30 segundos: prompt autenticado baixa, instala e configura a Skill</div>
-        </div>
-      </div>
+
+      <p style="margin-top: 16px; font-size: 13px; color: var(--smam-gray-400); position: relative;">
+        📧 <strong>Email:</strong> agenciaveddu@gmail.com<br>
+        📱 <strong>WhatsApp:</strong> mande no grupo oficial da Comunidade SMAM
+      </p>
+    </div>
+  </div>
+</section>
+
+<!-- LICENÇA -->
+<section style="background: var(--smam-white);">
+  <div class="container">
+    <div class="license-banner">
+      <strong>⚠️ Acesso restrito por licença:</strong> Esta Skill é protegida por <strong>Licença Proprietária Restrita</strong>. Cada cópia tem identificador único da licenciada. Redistribuição, revenda ou compartilhamento não autorizados configuram violação contratual com <strong>multa de R$ 2.700 (3× o valor)</strong> e ação judicial conforme Lei 9.610/98.
+      <br><br>
+      Ao se cadastrar, você concorda com os <a href="#">termos completos da licença</a>.
     </div>
   </div>
 </section>
 
 <!-- FAQ -->
-<section style="background: var(--smam-white);">
+<section>
   <div class="container">
     <div class="section-title">Tira-dúvidas</div>
     <h2 class="section-heading">Perguntas que toda aluna faz.</h2>
-    <p class="section-lead" style="margin-bottom: 32px;">Se sua dúvida não está aqui, manda no grupo da Comunidade SMAM ou no email <a href="mailto:agenciaveddu@gmail.com" style="color: var(--smam-green-dark);">agenciaveddu@gmail.com</a>.</p>
+    <p class="section-lead" style="margin-bottom: 32px;">Se sua dúvida não está aqui, manda no grupo SMAM ou no email <a href="mailto:agenciaveddu@gmail.com" style="color: var(--smam-green-dark);">agenciaveddu@gmail.com</a></p>
 
-    <div class="faq-item"><div class="faq-q">Por que precisa de conta GitHub?</div><div class="faq-a">A Skill fica num repositório privado do GitHub. Pra acessar conteúdo privado, GitHub exige autenticação. Conta é gratuita e leva 1 minuto pra criar.</div></div>
-    <div class="faq-item"><div class="faq-q">Posso usar pra meus clientes da agência?</div><div class="faq-a">SIM. A licença permite uso comercial pra seus próprios clientes. O que você NÃO pode é redistribuir a Skill ou ensinar a metodologia replicando-a como sua.</div></div>
-    <div class="faq-item"><div class="faq-q">Em quantos computadores posso instalar?</div><div class="faq-a">Até 3 computadores de uso individual (notebook pessoal + desktop + máquina de trabalho).</div></div>
-    <div class="faq-item"><div class="faq-q">E se eu cancelar a assinatura SMAM?</div><div class="faq-a">O acesso é revogado, mas você pode comprar a licença avulsa (R$ 900) pra manter o uso perpétuo.</div></div>
-    <div class="faq-item"><div class="faq-q">Posso passar pra uma colega?</div><div class="faq-a">NÃO. A licença é intransferível e identificada por collaborator GitHub. Sua colega precisa adquirir o acesso dela.</div></div>
-    <div class="faq-item"><div class="faq-q">Preciso saber programar?</div><div class="faq-a">Zero código. Você só conversa em português com o Claude — ele faz tudo.</div></div>
-    <div class="faq-item"><div class="faq-q">Funciona pra qualquer nicho?</div><div class="faq-a">Sim. A Skill se adapta a qualquer briefing — beleza, saúde, finanças, advocacia, gastronomia, fitness, B2B, infoprodutos.</div></div>
-    <div class="faq-item"><div class="faq-q">A licença é vitalícia?</div><div class="faq-a">Para aquisição avulsa: SIM, vitalícia. Para membros SMAM: enquanto a assinatura estiver ativa.</div></div>
+    <div class="faq-item"><div class="faq-q">Nunca usei GitHub, vou conseguir?</div><div class="faq-a">SIM! É só seguir o passo a passo desta página. Se travar, manda print que a gente ajuda. Não precisa entender de programação.</div></div>
+    <div class="faq-item"><div class="faq-q">GitHub é seguro? Vou ser cobrada?</div><div class="faq-a">Totalmente seguro (propriedade da Microsoft). Conta gratuita resolve, não vai cobrar nada. Não vendem seu email.</div></div>
+    <div class="faq-item"><div class="faq-q">Por que precisa de conta GitHub?</div><div class="faq-a">Porque a Skill fica num "diretório protegido" no GitHub. Pra acessar, o sistema precisa saber quem você é — daí a conta. É a forma técnica de impedir que pessoas não autorizadas baixem.</div></div>
+    <div class="faq-item"><div class="faq-q">Quanto tempo demora pra liberar meu acesso?</div><div class="faq-a">Até 24 horas úteis depois que você nos manda o cadastro. Geralmente sai antes.</div></div>
+    <div class="faq-item"><div class="faq-q">Posso usar pra meus clientes da agência?</div><div class="faq-a">SIM. A licença permite uso comercial pra seus próprios clientes. O que você NÃO pode é redistribuir a Skill ou compartilhar acesso com outras social medias.</div></div>
+    <div class="faq-item"><div class="faq-q">E se eu já tiver conta GitHub antiga?</div><div class="faq-a">Pode usar! Só precisa lembrar do username e ter acesso ao email cadastrado.</div></div>
+    <div class="faq-item"><div class="faq-q">Em quantos computadores posso instalar?</div><div class="faq-a">Até 3 computadores de uso individual (notebook + desktop + máquina de trabalho).</div></div>
+    <div class="faq-item"><div class="faq-q">A licença é vitalícia?</div><div class="faq-a">Aquisição avulsa (R$900): SIM, perpétua. Membro SMAM: enquanto a assinatura estiver ativa.</div></div>
   </div>
 </section>
 
@@ -425,13 +378,25 @@
   <div class="container">
     <p style="margin-bottom: 8px;">Feito com 💚 pela <strong>Comunidade SMAM</strong> — Social Media Acima da Média</p>
     <p>Por <strong>Jamile Fernandes</strong> · <a href="https://jamilefernandes.com.br">jamilefernandes.com.br</a></p>
-    <p style="margin-top: 12px;"><a href="mailto:agenciaveddu@gmail.com">📧 agenciaveddu@gmail.com</a></p>
+    <p style="margin-top: 10px;"><a href="mailto:agenciaveddu@gmail.com">📧 agenciaveddu@gmail.com</a></p>
     <div class="footer-legal">
       © 2026 Jamile Fernandes · Veddu Digital · Todos os direitos reservados.<br>
-      Skill protegida por <a href="https://github.com/agenciaveddu/estrategia-conteudo/blob/main/LICENSE.md">Licença Proprietária Restrita</a>. Uso autorizado conforme termos.
+      Skill protegida por Licença Proprietária Restrita.
     </div>
   </div>
 </footer>
+
+<script>
+function copyTemplate(btn) {
+  const text = document.getElementById('template-text').textContent;
+  navigator.clipboard.writeText(text).then(() => {
+    const original = btn.textContent;
+    btn.textContent = '✓ Copiado!';
+    btn.classList.add('copied');
+    setTimeout(() => { btn.textContent = original; btn.classList.remove('copied'); }, 2000);
+  });
+}
+</script>
 
 </body>
 </html>
